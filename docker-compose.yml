@@ -1,0 +1,12 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: .
+    volumes:
+      - ./logs:/var/log/nginx
+      - ./www:/var/www
+      - ./sites:/etc/nginx/sites-available
+    ports:
+      - "80:80"
+      - "443:443"
